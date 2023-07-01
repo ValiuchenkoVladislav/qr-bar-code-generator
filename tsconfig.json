@@ -10,7 +10,6 @@
     "module": "ESNext",
     "jsx": "react-jsx",
     "lib": ["ES6", "DOM"],
-    "types": ["@svgr/webpack"],
 
     "allowJs": false,
     "strict": true,
