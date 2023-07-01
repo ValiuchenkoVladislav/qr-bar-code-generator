@@ -27,6 +27,19 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader"
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              injectType: "singletonStyleTag"
+            }
+          },
+          "css-loader",
+          "sass-loader"
+        ]
       }
     ]
   }
