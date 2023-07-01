@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  width: 448px;
+  height: 680px;
+  padding: 0 56px;
+  display: grid;
+  grid-template-rows: 0.3fr 2.4fr 0.3fr;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
