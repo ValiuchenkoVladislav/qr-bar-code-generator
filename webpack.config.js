@@ -2,7 +2,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 
 /** @type { import("webpack").Configuration } */
-module.exports = {
+module.exports = (env) => ({
   entry: "./src/index.tsx",
 
   devServer: {
@@ -13,7 +13,9 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "src/index.html" }
+        { from: "src/index.html" },
+
+        { from: `src/assets/manifests/${env.target}.manifest.json`, to: "manifest.json" }
       ]
     })
   ],
@@ -51,4 +53,4 @@ module.exports = {
       }
     ]
   }
-};
+});
