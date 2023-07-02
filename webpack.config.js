@@ -15,7 +15,7 @@ module.exports = (env) => ({
       patterns: [
         { from: "src/index.html" },
 
-        { from: `src/assets/manifests/${env.target}.manifest.json`, to: "manifest.json" }
+        { from: `src/assets/manifests/${env.target ?? "chrome"}.manifest.json`, to: "manifest.json" }
       ]
     })
   ],
