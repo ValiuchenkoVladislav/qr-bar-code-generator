@@ -6,15 +6,15 @@ import { QRCodeSVG } from "qrcode.react";
 import { CodeOptions, GenerationForm } from "./GenerationForm/GenerationForm";
 import { DownloadButton } from "./DownloadButton/DownloadButton";
 
-import "./Main.scss";
+import "./HomePage.scss";
 
 
-export function Main() {
+export function HomePage() {
   const [codeOptions, setCodeOptions] = useState<CodeOptions>();
   const codeRef = useRef<HTMLElement>(null);
 
   return (
-    <main>
+    <main id="home_page">
       <GenerationForm setCodeOptions={setCodeOptions}/>
 
       {/* https://github.com/zpao/qrcode.react/issues/140 */}
