@@ -1,9 +1,9 @@
-import { RouteProps } from "react-router-dom";
+import { Route } from "../../types/Route";
 
 import { HistoryPage } from "./layout/HistoryPage";
 
 
-export const historyRoute: RouteProps = {
+export const historyRoute: Route = {
   path: "/history",
   element: <HistoryPage/>
 };

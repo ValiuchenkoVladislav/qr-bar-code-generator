@@ -1,9 +1,9 @@
-import { RouteProps } from "react-router-dom";
+import { Route } from "../../types/Route";
 
 import { HomePage } from "./layout/HomePage";
 
 
-export const homeRoute: RouteProps = {
+export const homeRoute: Route = {
   path: "/",
   element: <HomePage/>
 };
