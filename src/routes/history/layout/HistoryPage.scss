@@ -1,0 +1,17 @@
+#history_page {
+  overflow-y: auto;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .secret_tip {
+    display: block;
+    margin: 16px 0 16px 0;
+    font-size: 16px;
+  }
+}

@@ -3,20 +3,19 @@ import { StrictMode } from "react";
 import { Route, RouterProvider, createHashRouter, createRoutesFromElements } from "react-router-dom";
 import { Provider } from "react-redux";
 
-import * as routes from "~/routes";
+import { homeRoute, historyRoute } from "~/routes";
 
 import { appStore } from "~/store/appStore";
 
 import { App } from "~/layout/App";
 
 
-// address bar is hidden so there's nothing about hash router
+// BrowserRouter is troublesome when used in extensions
 const appRouter = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
-      {Object.values(routes).map(route =>
-        <Route key={route.path} {...route}/>
-      )}
+      <Route path={homeRoute.path} element={homeRoute.element}/>
+      <Route path={historyRoute.path} element={historyRoute.element}/>
     </Route>
   )
 );

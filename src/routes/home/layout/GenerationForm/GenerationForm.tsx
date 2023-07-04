@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 
-import { historySlice } from "../../../../modules/history";
-import { useAppDispatch } from "../../../../store/hooks";
+import { historySlice } from "~/modules/history";
+import { useAppDispatch } from "~/store/hooks";
 
 import { CodeOptions } from "~/types/CodeOptions";
 
@@ -10,7 +10,7 @@ import "./GenerationForm.scss";
 
 
 export type GenerationFormProps = Readonly<{
-  setCodeOptions: Dispatch<SetStateAction<CodeOptions | undefined>>;
+  setCodeOptions: Dispatch<SetStateAction<CodeOptions | null>>;
 }>;
 
 export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
@@ -19,7 +19,7 @@ export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
   const dispatch = useAppDispatch();
 
   function onSubmit(codeOptions: CodeOptions) {
-    dispatch(addRecord({ date: "12.14.14", prompt: codeOptions }));
+    dispatch(addRecord(codeOptions));
 
     setCodeOptions(codeOptions);
   }
@@ -33,7 +33,7 @@ export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
         </label>
         <label>
           <input type="radio" value="bar" {...register("type", { required: true })}/>
-          QR Code
+          Bar Code
         </label>
       </div>
 

@@ -1,4 +1,4 @@
-import GitHubLogo from "../../assets/images/githubLogo.svg";
+import GitHubLogo from "~/assets/images/githubLogo.svg";
 
 import "./Footer.scss";
 

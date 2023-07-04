@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { homeRoute, historyRoute } from "../../routes";
+import { homeRoute, historyRoute } from "~/routes";
 
 import "./Header.scss";
 

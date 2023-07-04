@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Barcode from "react-barcode";
 import { QRCodeSVG } from "qrcode.react";
@@ -12,7 +13,13 @@ import "./HomePage.scss";
 
 
 export function HomePage() {
-  const [codeOptions, setCodeOptions] = useState<CodeOptions | undefined>();
+  const [searchParams] = useSearchParams();
+  const [paramsType, paramsUrl] = [searchParams.get("type"), searchParams.get("url")];
+
+  const [codeOptions, setCodeOptions] = useState<CodeOptions | null>(
+    // @ts-ignore
+    (paramsType && paramsUrl) && { type: paramsType, url: paramsUrl }
+  );
   const codeRef = useRef<HTMLElement>(null);
 
   return (
