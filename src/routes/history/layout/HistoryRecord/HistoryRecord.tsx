@@ -23,8 +23,8 @@ export function HistoryRecord({ date, prompt }: GenerationRecord) {
           {prompt.url}
         </a>
         <div className="bottom_row">
-          <time dateTime={date}>date: {date}</time>
           <small>type: {prompt.type.toUpperCase()}</small>
+          <time dateTime={date}>{date}</time>
         </div>
       </section>
       <button onClick={() => dispatch(deleteRecord({ date, prompt }))}>
