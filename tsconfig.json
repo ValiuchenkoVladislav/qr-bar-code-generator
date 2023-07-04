@@ -11,6 +11,11 @@
     "jsx": "react-jsx",
     "lib": ["ES6", "DOM"],
 
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    },
+
     "allowJs": false,
     "strict": true,
     "allowUnreachableCode": false,

@@ -1,4 +1,5 @@
 const CopyPlugin = require("copy-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 
 /** @type { import("webpack").Configuration } */
@@ -21,7 +22,9 @@ module.exports = (env) => ({
   ],
 
   resolve: {
-    extensions: [".js", ".ts", ".tsx"]
+    extensions: [".js", ".ts", ".tsx"],
+
+    plugins: [new TsconfigPathsPlugin()]
   },
 
   module: {
