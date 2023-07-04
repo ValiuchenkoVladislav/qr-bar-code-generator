@@ -5,7 +5,8 @@
   "main": "src/index.tsx",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build:chrome": "webpack --mode production --env target=chrome"
+    "build:chrome": "webpack --mode production --env target=chrome",
+    "build:firefox": "webpack --mode production --env target=firefox"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

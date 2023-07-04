@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "QR & Bar Code Generator",
+  "description": "Browser extension for QR & Bar code generation",
+  "author": "Valiuchenko Vladislav",
+  "version": "1.0.0",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "QR & Bar Code Generator"
+  }
+}
