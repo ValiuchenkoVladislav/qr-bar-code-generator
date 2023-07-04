@@ -1,20 +1,22 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-
 import { Route, RouterProvider, createHashRouter, createRoutesFromElements } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import { homeRoute } from "./routes/home";
-import { historyRoute } from "./routes/history";
+import * as routes from "~/routes";
 
-import { App } from "./layout/App";
+import { appStore } from "~/store/appStore";
+
+import { App } from "~/layout/App";
 
 
 // address bar is hidden so there's nothing about hash router
 const appRouter = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
-      <Route {...homeRoute}/>
-      <Route {...historyRoute}/>
+      {Object.values(routes).map(route =>
+        <Route key={route.path} {...route}/>
+      )}
     </Route>
   )
 );
@@ -24,6 +26,8 @@ const appRouter = createHashRouter(
 // 'cause we're extension ourselves :D
 createRoot(document.body).render(
   <StrictMode>
-    <RouterProvider router={appRouter}/>
+    <Provider store={appStore}>
+      <RouterProvider router={appRouter}/>
+    </Provider>
   </StrictMode>
 );

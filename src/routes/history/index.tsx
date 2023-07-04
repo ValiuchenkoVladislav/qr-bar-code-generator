@@ -1,4 +1,4 @@
-import { Route } from "../../types/Route";
+import { Route } from "~/types/Route";
 
 import { HistoryPage } from "./layout/HistoryPage";
 
