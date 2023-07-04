@@ -1,4 +1,4 @@
-import { Route } from "../../types/Route";
+import { Route } from "~/types/Route";
 
 import { HomePage } from "./layout/HomePage";
 

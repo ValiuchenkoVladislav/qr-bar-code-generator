@@ -3,14 +3,16 @@ import { useRef, useState } from "react";
 import Barcode from "react-barcode";
 import { QRCodeSVG } from "qrcode.react";
 
-import { CodeOptions, GenerationForm } from "./GenerationForm/GenerationForm";
+import { GenerationForm } from "./GenerationForm/GenerationForm";
 import { DownloadButton } from "./DownloadButton/DownloadButton";
+
+import { CodeOptions } from "~/types/CodeOptions";
 
 import "./HomePage.scss";
 
 
 export function HomePage() {
-  const [codeOptions, setCodeOptions] = useState<CodeOptions>();
+  const [codeOptions, setCodeOptions] = useState<CodeOptions | undefined>();
   const codeRef = useRef<HTMLElement>(null);
 
   return (

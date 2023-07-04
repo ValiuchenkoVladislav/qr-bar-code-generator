@@ -1,24 +1,31 @@
 import { Dispatch, SetStateAction } from "react";
-
 import { useForm } from "react-hook-form";
+
+import { historySlice } from "../../../../modules/history";
+import { useAppDispatch } from "../../../../store/hooks";
+
+import { CodeOptions } from "~/types/CodeOptions";
 
 import "./GenerationForm.scss";
 
 
-export type CodeOptions = Readonly<{
-  type: "qr" | "bar";
-  url: string;
-}> | undefined;
-
 export type GenerationFormProps = Readonly<{
-  setCodeOptions: Dispatch<SetStateAction<CodeOptions>>;
+  setCodeOptions: Dispatch<SetStateAction<CodeOptions | undefined>>;
 }>;
 
 export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
-  const { register, handleSubmit, formState: { errors } } = useForm<NonNullable<CodeOptions>>();
+  const { register, handleSubmit, formState: { errors } } = useForm<CodeOptions>();
+  const { addRecord } = historySlice.actions;
+  const dispatch = useAppDispatch();
+
+  function onSubmit(codeOptions: CodeOptions) {
+    dispatch(addRecord({ date: "12.14.14", prompt: codeOptions }));
+
+    setCodeOptions(codeOptions);
+  }
 
   return (
-    <form onSubmit={handleSubmit(setCodeOptions)} className="generation_form">
+    <form onSubmit={handleSubmit(onSubmit)} className="generation_form">
       <div className="code_type_option" aria-invalid={!!errors.type}>
         <label>
           <input type="radio" value="qr" {...register("type", { required: true })}/>
