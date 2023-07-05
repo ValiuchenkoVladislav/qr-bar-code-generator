@@ -15,6 +15,7 @@ module.exports = (env) => ({
     new CopyPlugin({
       patterns: [
         { from: "src/index.html" },
+        { from: "src/assets/images/icons/qr-code-icon.png" },
 
         { from: `src/assets/manifests/${env.target ?? "chrome"}.manifest.json`, to: "manifest.json" }
       ]
