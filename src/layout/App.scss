@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../assets/fonts/Inter-Regular.woff2");
+}
+
+body {
+  margin: 0;
+  width: 440px;
+  height: 560px;
+  display: grid;
+  grid-template-rows: 0.4fr 2.4fr 0.4fr;
+  font-family: Inter, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

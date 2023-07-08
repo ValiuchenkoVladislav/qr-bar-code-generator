@@ -1,0 +1,10 @@
+#home_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.generated_code svg {
+  max-width: 100%;
+}

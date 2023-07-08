@@ -1,0 +1,31 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "lib": ["ES6", "DOM"],
+
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    },
+
+    "allowJs": false,
+    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  }
+}

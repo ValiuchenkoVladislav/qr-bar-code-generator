@@ -1,0 +1,42 @@
+.history_record {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    height: 46px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.record_info {
+  height: 46px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 8px 0 8px;
+
+  .bottom_row {
+    display: flex;
+    justify-content: space-between;
+
+    time, small {
+      font-size: 16px;
+    }
+  }    
+}
+
+.prompt_url {
+  white-space: nowrap;
+  margin: 0;
+  font-size: 20px;
+}

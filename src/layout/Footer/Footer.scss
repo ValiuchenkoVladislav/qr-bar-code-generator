@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  border-top: 1px solid black;
+  padding: 0 16px;
+}
+
+.project_github {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  svg {
+    width: 40px;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "qr-code-generator-extensions",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build:chrome": "webpack --mode production --env target=chrome",
+    "build:firefox": "webpack --mode production --env target=firefox"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-barcode": "^1.4.6",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.14.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
