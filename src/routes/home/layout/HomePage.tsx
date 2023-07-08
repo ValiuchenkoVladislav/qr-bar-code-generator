@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import Barcode from "react-barcode";
@@ -20,21 +20,24 @@ export function HomePage() {
     // @ts-ignore
     (paramsType && paramsUrl) && { type: paramsType, url: paramsUrl }
   );
-  const codeRef = useRef<HTMLElement>(null);
+
+  const [codeRef, setCodeRef] = useState<HTMLElement | null>(null);
 
   return (
     <main id="home_page">
       <GenerationForm setCodeOptions={setCodeOptions}/>
 
       {/* https://github.com/zpao/qrcode.react/issues/140 */}
-      <section className="generated_code" ref={codeRef}>
-        {codeOptions && ((codeOptions.type === "bar")
-          ? <Barcode value={codeOptions.url} displayValue={false} width={1}/>
-          : <QRCodeSVG value={codeOptions.url} size={220}/>
-        )}
-      </section>
+      {codeOptions && (
+        <section className="generated_code" ref={ref => setCodeRef(ref)}>
+          {(codeOptions.type === "bar")
+            ? <Barcode value={codeOptions.url} displayValue={false} width={1}/>
+            : <QRCodeSVG value={codeOptions.url} size={220}/>
+          }
+        </section>
+      )}
 
-      {codeOptions && <DownloadButton codeRef={codeRef}/>}
+      {codeRef && <DownloadButton codeRef={codeRef}/>}
     </main>
   );
 }
