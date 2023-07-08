@@ -30,7 +30,7 @@
       border-radius: 0 16px 16px 0;
     }
 
-    &:has(input:checked) {
+    &[aria-selected="true"] {
       background-color: rgb(70, 70, 70);
     }
 

@@ -14,7 +14,8 @@ export type GenerationFormProps = Readonly<{
 }>;
 
 export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
-  const { register, handleSubmit, formState: { errors } } = useForm<CodeOptions>();
+  const { register, watch, handleSubmit, formState: { errors } } = useForm<CodeOptions>();
+  const typeField = watch("type");
   const { addRecord } = historySlice.actions;
   const dispatch = useAppDispatch();
 
@@ -27,11 +28,11 @@ export function GenerationForm({ setCodeOptions }: GenerationFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="generation_form">
       <div className="code_type_option" aria-invalid={!!errors.type}>
-        <label>
+        <label aria-selected={typeField === "qr"}>
           <input type="radio" value="qr" {...register("type", { required: true })}/>
           QR Code
         </label>
-        <label>
+        <label aria-selected={typeField === "bar"}>
           <input type="radio" value="bar" {...register("type", { required: true })}/>
           Bar Code
         </label>
